@@ -1,9 +1,15 @@
 # transformer
 vue+nodejs+thrift+zookeeper+mybatis
-
-- 随便搭建的分布式系统，第一版本时间紧，都是bug等待修复
-- vue+webpack 做前端工程
-- express 做前端controller ，好多callback，TODO改成sync方法，thrift是否可以做成pool?
-- thrift 做跨语言通信协议
-- zookeeper 做集群管理，感觉不够完善，java 服务端shutdown时会报错
-- mybatis 访问数据库
+- a DS,there are so many bug waiting to fix;
+- vue+webpack front webpack dev@env how to config?
+- nodejs@express is controller ，use so many callback ，thrift is protocol.
+- how to thrift build a connection-pool?
+- zookeeper is cluster manager,java client shutdown has some trouble;
+- mybatis is DAO;
+# TODO 
+- nodejs use co&yield modify callback func to sync func;
+- modify zookeeper watcher;
+- thrift connection release&reuser;
+- mybatis config for prod-env;
+- webpack dev-env config;
+- build front plugin;
