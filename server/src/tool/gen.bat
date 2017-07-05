@@ -1,0 +1,1 @@
+thrift -r --gen java source/UserRegisterInfoService.thrift

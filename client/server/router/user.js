@@ -1,0 +1,23 @@
+const express = require("express");
+const router = express.Router();
+const thrift = require('../thrift');
+const service = require('../thrift/AboutUsService');
+const types = require('../thrift/AboutUsService_types');
+const setting = require('../config').setting;
+
+router.post("/getJson", function(req, response){
+	
+  var obj = new types.AboutUs();
+  thrift.connection(service,function(service,conn){
+  	service.selectAboutUs(0,function(err, res){
+  		console.log(res);
+  		var result = res;
+  		conn.end();
+  		response.json(result);
+ 
+  	})
+  })
+    
+});
+
+module.exports = router
