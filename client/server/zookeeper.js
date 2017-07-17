@@ -1,5 +1,5 @@
 var zookeeper = require('node-zookeeper-client');
-var config = require('./config');
+var config = require('../config');
 var thrift = require('./thrift');
 
 function listChildren(client, path) {
@@ -20,9 +20,10 @@ function listChildren(client, path) {
             }
  
             console.log('Children of %s are: %j.', path, children);
-            thrift.clear();
+            var inst = thrift.instance();
+            inst.clear();
        			children.forEach(function(e){
-           		thrift.create(e); 
+           		inst.address(e); 
             })
       
         }
